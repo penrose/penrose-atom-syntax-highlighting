@@ -397,7 +397,7 @@ where f := CreateFunction(I, R);
         polyline = polygonizeCurve(5, f.shape2.pathData)
     	fill = Colors.none
     	color = f.color
-	strokeWidth = global.stroke
+        strokeWidth = global.stroke
     	-- TODO: start and end style depending on the interval
       }
 
@@ -477,7 +477,7 @@ where p := Pt(x, y);
       f := CreateFunction(I, R);
       In(x, I) {
 
-      p.shape = Circle {
+          p.shape = Circle {
           x = x.val
 	      y = y.val
 	      r = 3.0

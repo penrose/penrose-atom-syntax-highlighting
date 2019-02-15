@@ -16,8 +16,20 @@ patterns: [
       name: 'comment.line.penrose.style'
   }
   {
-      match: '\\`[A-z]*\\`'
-      name: 'string.quoted.penrose.style'
+     match: '(\\b(Set|Reals|Real|Point|Function|Interval|OpenInterval|ClosedInterval|LeftClopenInterval|RightClopenInterval|CreateInterval|CreateOpenInterval|CreateClosedInterval|CreateLeftClopenInterval|CreateRightClopenInterval|CreateFunction|Pt|union|intersection|derivativeAtP|derivativeOverD|integral|apply|compose|Bounded|LeftBounded|RightBounded|Unbounded|Compact|Disconnected|Degenerate|Empty|Continuous|Discontinuous|Differentiable|Integrable|Invertible|Monotonic|Decreasing|Increasing|In|In2|Subset|LessThan|ClosedEnd|OpenEnd)\\b)'
+     name: 'support.type.penrose.style'
+  }
+  {
+      match: '\\b[a-zA-Z0-9_\.]+\\s*(?=\=)'
+      name: 'support.variable'
+  }
+  {
+      match: '-?(?=[1-9]|0(?!\\d))\\d+(\\.\\d+)?([eE][+-]?\\d+)?'
+      name: 'support.constant'
+  }
+  {
+      match: '\\b(OPTIMIZED)\\b'
+      name: 'support.constant'
   }
   {
       match: '(where|with|delete|override)'
@@ -27,13 +39,10 @@ patterns: [
       match: '(delete|override)'
       name: 'keyword.operator'
   }
-  {
-     match: '(\\b(Set|Reals|Real|Point|Function|Interval|OpenInterval|ClosedInterval|LeftClopenInterval|RightClopenInterval|CreateInterval|CreateOpenInterval|CreateClosedInterval|CreateLeftClopenInterval|CreateRightClopenInterval|CreateFunction|Pt|union|intersection|derivativeAtP|derivativeOverD|integral|apply|compose|Bounded|LeftBounded|RightBounded|Unbounded|Compact|Disconnected|Degenerate|Empty|Continuous|Discontinuous|Differentiable|Integrable|Invertible|Monotonic|Decreasing|Increasing|In|In2|Subset|LessThan|ClosedEnd|OpenEnd)\\b)'
-     name: 'support.type.penrose.style'
-  }
-  {
-     match: '=\\b([A-Z][A-z]*)\\b{'
-     name: 'support.type.penrose.style'
-  }
-
+  { include: '#quoted' }
 ]
+
+repository:
+    quoted:
+        match: '\\`[A-z]*\\`'
+        name: 'string.quoted.penrose.style'
