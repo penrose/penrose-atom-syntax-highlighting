@@ -32,7 +32,7 @@ patterns: [
       name: 'support.constant'
   }
   {
-      match: '(where|with|delete|override)'
+      match: '(where|with|delete|override|plugin)'
       name: 'keyword.other'
   }
   {
@@ -40,9 +40,13 @@ patterns: [
       name: 'keyword.operator'
   }
   { include: '#quoted' }
+  { include: '#plugin' }
 ]
 
 repository:
     quoted:
         match: '\\`[A-z]*\\`'
+        name: 'string.quoted.penrose.style'
+    quoted:
+        match: '\\"(-|[A-z0-9._])+\\"'
         name: 'string.quoted.penrose.style'
