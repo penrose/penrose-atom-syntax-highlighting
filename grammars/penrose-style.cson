@@ -24,7 +24,7 @@ patterns: [
       name: 'support.variable'
   }
   {
-      match: '-?(?=[1-9]|0(?!\\d))\\d+(\\.\\d+)?([eE][+-]?\\d+)?'
+      match: '\\b-?(?=[1-9]|0(?!\\d))\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b'
       name: 'support.constant'
   }
   {
@@ -32,12 +32,12 @@ patterns: [
       name: 'support.constant'
   }
   {
-      match: '(where|with|delete|override|plugin)'
+      match: '(where|with|plugin)'
       name: 'keyword.other'
   }
   {
-      match: '(delete|override)'
-      name: 'keyword.operator'
+      match: '(delete|override|ensure|encourage)'
+      name: 'keyword.other'
   }
   { include: '#quoted' }
   { include: '#plugin' }
